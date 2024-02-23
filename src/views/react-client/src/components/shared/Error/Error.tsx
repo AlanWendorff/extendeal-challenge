@@ -5,11 +5,11 @@ interface IErrorProps {
 }
 
 const Error: FC<IErrorProps> = ({ error }) => {
-  if (error) {
-    return <h1>Error: {error}</h1>;
+  if (!error) {
+    return <></>;
   }
 
-  return <></>;
+  return <h1>Error: {error}</h1>;
 };
 
 export default Error;

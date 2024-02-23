@@ -20,6 +20,7 @@ export default defineConfig(({ mode }) => {
         '@hooks': `${path.resolve(__dirname, './src/hooks/')}`,
         '@hocs': `${path.resolve(__dirname, './src/hocs/')}`,
         '@context': `${path.resolve(__dirname, './src/context/')}`,
+        '@interfaces': `${path.resolve(__dirname, './src/interfaces/')}`,
         '@images': `${path.resolve(__dirname, './src/assets/images/')}`,
         '@services': `${path.resolve(__dirname, './src/services/')}`,
         '@styles': `${path.resolve(__dirname, './src/styles/')}`,

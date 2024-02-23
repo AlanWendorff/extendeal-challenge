@@ -17,9 +17,7 @@ const useModifyProduct = (): IUseModifyProduct => {
   const handlePutProduct = (data: TProduct) => {
     productsController(productsRepository())
       .putProduct(data)
-      .then((res) => {
-        console.log(res);
-
+      .then(() => {
         navigate(ROOT);
       })
       .catch((err) => {

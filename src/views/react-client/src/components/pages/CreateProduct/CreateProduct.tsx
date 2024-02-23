@@ -1,9 +1,8 @@
 import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Button, FormControl, Grid, InputLabel, Select, TextField } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
 import useCreateProduct from '@/hooks/product/useCreateProduct';
 import { v4 as uuid } from 'uuid';
+import Form from './components/Form';
 
 enum EAvailability {
   true = 'Si',
@@ -36,37 +35,7 @@ const CreateProduct: FC = () => {
     });
   };
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Grid sx={{ gap: 2, padding: 5 }} container direction='column'>
-        <TextField label='Nombre' variant='filled' required {...register('name')} />
-
-        <TextField
-          label='URL Imagen'
-          variant='filled'
-          required
-          placeholder='https://www.myimage.com/image.png'
-          {...register('thumbnail_url')}
-        />
-
-        <TextField type='number' label='Precio' variant='filled' required placeholder='152' {...register('price')} />
-
-        <TextField type='number' label='Stock' variant='filled' required placeholder='59' {...register('stock')} />
-
-        <FormControl>
-          <InputLabel id='combobox-availability'>Disponibilidad</InputLabel>
-          <Select defaultValue='true' id='combobox-availability' label='Disponibilidad' {...register('is_available')}>
-            <MenuItem value='false'>{EAvailability.false}</MenuItem>
-            <MenuItem value='true'>{EAvailability.true}</MenuItem>
-          </Select>
-        </FormControl>
-
-        <Button type='submit' sx={{ marginTop: 3 }} variant='contained' color='success'>
-          Crear
-        </Button>
-      </Grid>
-    </form>
-  );
+  return <Form onSubmit={handleSubmit(onSubmit)} register={register} />;
 };
 
 export default CreateProduct;

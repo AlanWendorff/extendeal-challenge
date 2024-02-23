@@ -6,11 +6,11 @@ interface ILoadingProps {
 }
 
 const Loading: FC<ILoadingProps> = ({ isLoading }) => {
-  if (isLoading) {
-    return <CircularProgress />;
+  if (!isLoading) {
+    return <></>;
   }
 
-  return <></>;
+  return <CircularProgress />;
 };
 
 export default Loading;

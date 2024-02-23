@@ -29,6 +29,7 @@
       "@hooks/*": ["./src/hooks/*"],
       "@hocs/*": ["./src/hocs/*"],
       "@context/*": ["./src/context/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
       "@images/*": ["./src/assets/images/*"],
       "@services/*": ["./src/services/*"],
       "@styles/*": ["./src/styles/*"],
