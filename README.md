@@ -1,10 +1,10 @@
 # Extendeal Frontend
 
-**Project structure description:** This project follows an approach of 2 yarn workspaces. Into  ```src``` directory you will find  ```core``` and ```views``` directories.
+**Project structure description:** This project follows an approach of 2 yarn workspaces. Into  ```src``` directory you will find  [```core```](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/core) and [```views```](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/views) directories.
 
-```src/core``` : Holds everything concerned to API Fetching.
+[```core```](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/core) : Holds everything concerned to API Fetching.
 <br/>
-```src/views```: As the name implies, this directory holds everything concerned to Frameworks or Libraries to build user interfaces.
+[```views```](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/views): As the name implies, this directory holds everything concerned to Frameworks or Libraries to build user interfaces.
 
 The modularity of the project has the advantage of being able to consume ```src/core``` from any framework or library. This allows to have many frameworks coexisting in the same project.
 
@@ -13,7 +13,7 @@ The modularity of the project has the advantage of being able to consume ```src/
 **Advice:** Since the project consists of 2 yarn workspaces, ```node_modules``` must be installed in all of them.
 
 Install dependencies on the root project directory <br/>
-Install dependencies into **Framework/library root dir**  (```src/views/react-client```)
+Install dependencies into **Framework/library root dir**  [(```src/views/react-client```)](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/views/react-client)
 
 ```bash
 npm install
@@ -24,7 +24,7 @@ pnpm install
 ```
 To run the development server:
 
-Positioned into **Framework/library root dir** (```src/views/react-client```)
+Positioned into **Framework/library root dir** [(```src/views/react-client```)](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/views/react-client)
 
 ```bash
 npm run dev
