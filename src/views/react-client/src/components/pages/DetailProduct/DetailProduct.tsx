@@ -1,19 +1,14 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import getProduct from '@/services/products/getProduct.service';
-import { useParams } from 'react-router-dom';
-import { ISingleProductDTO } from '@core/configuration/http/dto/Products.dto';
 import Loading from '@/components/shared/Loading';
 import Error from '@/components/shared/Error';
 import useModifyProduct from '@/hooks/product/useModifyProduct';
 import Form from './components/Form';
 import IProductForm from '@/interfaces/products/Form.interface';
+import useDetailProduct from '@/hooks/product/useDetailProduct';
 
 const DetailProduct: FC = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState<ISingleProductDTO | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { product, error, isLoading } = useDetailProduct();
   const { handlePutProduct } = useModifyProduct();
   const { register, handleSubmit } = useForm<IProductForm>();
 
@@ -28,19 +23,6 @@ const DetailProduct: FC = () => {
       is_available: `${data.is_available}` === 'true'
     });
   };
-
-  useEffect(() => {
-    setIsLoading(true);
-    getProduct(`${id}`)
-      .then((res) => {
-        setProduct(res);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setIsLoading(false);
-      });
-  }, [id]);
 
   return (
     <Loading isLoading={isLoading}>

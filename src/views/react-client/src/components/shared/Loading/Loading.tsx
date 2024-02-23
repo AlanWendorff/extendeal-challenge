@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, Grid } from '@mui/material';
 
 interface ILoadingProps {
   isLoading: boolean;
@@ -8,7 +8,11 @@ interface ILoadingProps {
 
 const Loading: FC<ILoadingProps> = ({ isLoading, children }) => {
   if (isLoading) {
-    return <CircularProgress />;
+    return (
+      <Grid container justifyContent='center'>
+        <CircularProgress sx={{ margin: 20 }} />
+      </Grid>
+    );
   }
 
   return children;

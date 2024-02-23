@@ -36,8 +36,6 @@ const httpMock = {
     return (await response) as T;
   },
   post: async <T>(url: string, body: any) => {
-    console.log(body);
-
     products.push(body);
 
     const response = new Promise((resolve) =>
