@@ -43,23 +43,22 @@ const DetailProduct: FC = () => {
   }, [id]);
 
   return (
-    <>
-      <Loading isLoading={isLoading} />
-      <Error error={error} />
-
-      {product && (
-        <Form
-          onSubmit={handleSubmit(onSubmit)}
-          product_id={product.response.product.product_id}
-          is_available={product.response.product.is_available}
-          name={product.response.product.name}
-          price={product.response.product.price}
-          stock={product.response.product.stock}
-          thumbnail_url={product.response.product.thumbnail_url}
-          register={register}
-        />
-      )}
-    </>
+    <Loading isLoading={isLoading}>
+      <Error error={error}>
+        {product && (
+          <Form
+            onSubmit={handleSubmit(onSubmit)}
+            product_id={product.response.product.product_id}
+            is_available={product.response.product.is_available}
+            name={product.response.product.name}
+            price={product.response.product.price}
+            stock={product.response.product.stock}
+            thumbnail_url={product.response.product.thumbnail_url}
+            register={register}
+          />
+        )}
+      </Error>
+    </Loading>
   );
 };
 
