@@ -6,6 +6,7 @@ import useModifyProduct from '@/hooks/product/useModifyProduct';
 import Form from './components/Form';
 import IProductForm from '@/interfaces/products/Form.interface';
 import useDetailProduct from '@/hooks/product/useDetailProduct';
+import BackToHome from '@/components/elements/BackToHome';
 
 const DetailProduct: FC = () => {
   const { product, error, isLoading } = useDetailProduct();
@@ -26,6 +27,7 @@ const DetailProduct: FC = () => {
 
   return (
     <Loading isLoading={isLoading}>
+      <BackToHome />
       <Error error={error}>
         {product && (
           <Form

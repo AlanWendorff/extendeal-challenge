@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import useCreateProduct from '@/hooks/product/useCreateProduct';
 import { v4 as uuid } from 'uuid';
 import Form from './components/Form';
+import BackToHome from '@/components/elements/BackToHome';
 
 enum EAvailability {
   true = 'Si',
@@ -35,7 +36,12 @@ const CreateProduct: FC = () => {
     });
   };
 
-  return <Form onSubmit={handleSubmit(onSubmit)} register={register} />;
+  return (
+    <>
+      <BackToHome />
+      <Form onSubmit={handleSubmit(onSubmit)} register={register} />
+    </>
+  );
 };
 
 export default CreateProduct;
