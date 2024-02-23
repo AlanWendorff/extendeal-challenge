@@ -1,0 +1,46 @@
+@use './_responsives.scss';
+@use './_mixins.scss';
+@use './_fonts.scss';
+
+:root {
+  --color-alpha: #121212;
+  --color-beta: #181818;
+  --color-gamma: #2a2a2a;
+
+  --max-web-width: 60rem;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
+
+  @include responsives.VGA {
+    font-size: 14px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+}
+
+#root {
+  width: 100%;
+  max-width: var(--max-web-width);
+
+  @include responsives.HD {
+    max-width: 100%;
+  }
+}
+
+body {
+  @include mixins.flex_container(column, flex-start, center);
+  font-family: Roboto, sans-serif;
+  margin: 0;
+
+  @include responsives.VGA {
+    padding: 0;
+  }
+}

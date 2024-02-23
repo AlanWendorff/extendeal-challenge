@@ -1,0 +1,12 @@
+{
+  "name": "Extendeal challenge",
+  "short_name": "Extendeal challenge",
+  "description": "Extendeal challenge",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "id": "/",
+  "start_url": "/"
+}
