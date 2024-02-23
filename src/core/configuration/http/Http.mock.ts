@@ -4,13 +4,13 @@ import productList from '../mocks/products.api';
 let products = productList;
 
 const httpMock = {
-  get: async <T>(body?: any) => {
+  get: async <T>(url: string, body?: any) => {
     if (body) {
       const response = new Promise((resolve) =>
         setTimeout(
           () =>
             resolve({
-              meta: META_200.get,
+              meta: { ...META_200.get, endpoint: url },
               response: {
                 product: products.find(({ id }) => id === body)
               }
@@ -25,7 +25,7 @@ const httpMock = {
       setTimeout(
         () =>
           resolve({
-            meta: META_200.get,
+            meta: { ...META_200.get, endpoint: url },
             response: {
               products
             }
@@ -35,14 +35,14 @@ const httpMock = {
     );
     return (await response) as T;
   },
-  post: async <T>(body: any) => {
+  post: async <T>(url: string, body: any) => {
     products.push(body);
 
     const response = new Promise((resolve) =>
       setTimeout(
         () =>
           resolve({
-            meta: META_200.post,
+            meta: { ...META_200.post, endpoint: url },
             response: {
               products
             }
@@ -52,14 +52,14 @@ const httpMock = {
     );
     return (await response) as T;
   },
-  put: async <T>(body: any) => {
+  put: async <T>(url: string, body: any) => {
     products = [...products.filter(({ id }) => id !== body.id), body];
 
     const response = new Promise((resolve) =>
       setTimeout(
         () =>
           resolve({
-            meta: META_200.put,
+            meta: { ...META_200.put, endpoint: url },
             response: {
               products
             }
@@ -69,14 +69,14 @@ const httpMock = {
     );
     return (await response) as T;
   },
-  delete: async <T>(body: any) => {
+  delete: async <T>(url: string, body: any) => {
     products = products.filter(({ id }) => id !== body);
 
     const response = new Promise((resolve) =>
       setTimeout(
         () =>
           resolve({
-            meta: META_200.delete,
+            meta: { ...META_200.delete, endpoint: url },
             response: {
               products
             }
