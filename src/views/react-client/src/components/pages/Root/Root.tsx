@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { Button, Grid } from '@mui/material';
-import useProducts from '@hooks/product/useProducts';
+import useProducts from '@/hooks/product/useProducts';
 import Table from './components';
 import { Link } from 'react-router-dom';
-import { PRODUCT_CREATE } from '@constants/routes';
-import Loading from '@components/shared/Loading';
-import Error from '@components/shared/Error';
+import { PRODUCT_CREATE } from '@/constants/routes';
+import Loading from '@/components/shared/Loading';
+import Error from '@/components/shared/Error';
 
 const Root: FC = () => {
   const { products, isLoading, error, handleDeleteProduct } = useProducts();
