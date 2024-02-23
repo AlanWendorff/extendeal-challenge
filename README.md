@@ -1,7 +1,5 @@
 # Extendeal Frontend
 
-This is a [Vite.ts](https://vitejs.dev) project bootstrapped with `yarn create vite`.
-
 **Project structure description:** This project follows an approach of 2 yarn workspaces. Into  ```src``` directory you will find  ```core``` and ```views``` directories.
 
 ```src/core``` : Holds everything concerned to API Fetching.
