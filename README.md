@@ -13,7 +13,7 @@ The modularity of the project has the advantage of being able to consume ```src/
 **Advice:** Since the project consists of 2 yarn workspaces, ```node_modules``` must be installed in all of them.
 
 Install dependencies on the root project directory <br/>
-Install dependencies into **Framework/library root dir**  ([```src/views/react-client```](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/views/react-client))
+Install dependencies into **Framework/library root dir**  [```src/views/react-client```](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/views/react-client)
 
 ```bash
 npm install
@@ -24,7 +24,7 @@ pnpm install
 ```
 To run the development server:
 
-Positioned into **Framework/library root dir** ([```src/views/react-client```](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/views/react-client))
+Positioned into **Framework/library root dir** [```src/views/react-client```](https://github.com/AlanWendorff/extendeal-challenge/tree/develop/src/views/react-client)
 
 ```bash
 npm run dev
