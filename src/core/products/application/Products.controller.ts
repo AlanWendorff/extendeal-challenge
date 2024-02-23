@@ -1,4 +1,4 @@
-import { TProduct } from '../domain/models/Products.model';
+import { TProductItemModel } from '../domain/models/Products.model';
 import IProductsRepository from '../domain/repositories/Products.repository';
 import ProductsService from '../domain/services/Products.service';
 
@@ -11,10 +11,10 @@ const ProductsController = (repository: IProductsRepository): IProductsControlle
   getProduct: (id: string) => {
     return ProductsService(repository).getProduct(id);
   },
-  postProduct: (data: TProduct) => {
+  postProduct: (data: TProductItemModel) => {
     return ProductsService(repository).postProduct(data);
   },
-  putProduct: (data: TProduct) => {
+  putProduct: (data: TProductItemModel) => {
     return ProductsService(repository).putProduct(data);
   },
   deleteProduct: (id: string) => {

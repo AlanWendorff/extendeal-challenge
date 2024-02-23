@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import useTable from './useTable';
-import { IProduct } from '@core/configuration/http/dto/Products.dto';
+import { TProductItemModel } from '@core/products/domain/models/Products.model';
 
 interface ITableProps {
-  products: IProduct[];
+  products: TProductItemModel[];
   handleDeleteProduct: (id: string) => void;
 }
 

@@ -2,7 +2,7 @@ import httpMock from '../../../configuration/http/Http.mock';
 import IProductsRepository from '../../domain/repositories/Products.repository';
 import IProductsDTO, { ISingleProductDTO } from '../../../configuration/http/dto/Products.dto';
 import { BASE_URL } from '../../../configuration/constants/env';
-import { TProduct } from '../../domain/models/Products.model';
+import { TProductItemModel } from '../../domain/models/Products.model';
 
 const productsRepository = (): IProductsRepository => ({
   getProducts: async () => {
@@ -19,14 +19,14 @@ const productsRepository = (): IProductsRepository => ({
       throw new Error(`Error getting user: ${error}`);
     }
   },
-  postProduct: async (data: TProduct) => {
+  postProduct: async (data: TProductItemModel) => {
     try {
       return await httpMock.post<IProductsDTO>(`${BASE_URL}/products`, data);
     } catch (error) {
       throw new Error(`Error getting user: ${error}`);
     }
   },
-  putProduct: async (data: TProduct) => {
+  putProduct: async (data: TProductItemModel) => {
     try {
       return await httpMock.put<IProductsDTO>(`${BASE_URL}/products`, data);
     } catch (error) {

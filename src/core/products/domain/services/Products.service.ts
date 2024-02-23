@@ -1,4 +1,4 @@
-import { TProduct } from '../models/Products.model';
+import { TProductItemModel } from '../models/Products.model';
 import IProductsRepository from '../repositories/Products.repository';
 
 interface IProductsService extends IProductsRepository {}
@@ -10,10 +10,10 @@ const productsService = (repository: IProductsRepository): IProductsService => (
   getProduct: (id: string) => {
     return repository.getProduct(id);
   },
-  postProduct: (data: TProduct) => {
+  postProduct: (data: TProductItemModel) => {
     return repository.postProduct(data);
   },
-  putProduct: (data: TProduct) => {
+  putProduct: (data: TProductItemModel) => {
     return repository.putProduct(data);
   },
   deleteProduct: (id: string) => {

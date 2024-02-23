@@ -1,11 +1,11 @@
-import TProducts, { TProduct, TSingleProduct } from '../models/Products.model';
+import { TProductsModel, TProductItemModel, TSingleProductModel } from '../models/Products.model';
 
 interface IProductsRepository {
-  getProducts: () => Promise<TProducts>;
-  getProduct: (id: string) => Promise<TSingleProduct>;
-  postProduct: (data: TProduct) => Promise<TProducts>;
-  putProduct: (data: TProduct) => Promise<TProducts>;
-  deleteProduct: (id: string) => Promise<TProducts>;
+  getProducts: () => Promise<TProductsModel>;
+  getProduct: (id: string) => Promise<TSingleProductModel>;
+  postProduct: (data: TProductItemModel) => Promise<TProductsModel>;
+  putProduct: (data: TProductItemModel) => Promise<TProductsModel>;
+  deleteProduct: (id: string) => Promise<TProductsModel>;
 }
 
 export default IProductsRepository;

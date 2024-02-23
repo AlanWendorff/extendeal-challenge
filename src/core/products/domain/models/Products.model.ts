@@ -1,9 +1,7 @@
 import IProductsDTO, { IProduct, ISingleProductDTO } from '../../../configuration/http/dto/Products.dto';
 
-type TProducts = IProductsDTO;
+export type TProductsModel = IProductsDTO & {};
 
-export type TSingleProduct = ISingleProductDTO;
+export type TSingleProductModel = ISingleProductDTO & {};
 
-export type TProduct = IProduct;
-
-export default TProducts;
+export type TProductItemModel = IProduct & {};

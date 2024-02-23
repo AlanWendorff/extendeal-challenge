@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import productsController from '@core/products/application/Products.controller';
 import productsRepository from '@core/products/infrastructure/repositories/Products.repository';
-import TProducts from '@core/products/domain/models/Products.model';
+import { TProductsModel } from '@core/products/domain/models/Products.model';
 
 interface IUseProducts {
-  products: TProducts | null;
+  products: TProductsModel | null;
   isLoading: boolean;
   error: string | null;
   handleDeleteProduct: (id: string) => void;
 }
 
 const useProducts = (): IUseProducts => {
-  const [products, setProducts] = useState<TProducts | null>(null);
+  const [products, setProducts] = useState<TProductsModel | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
