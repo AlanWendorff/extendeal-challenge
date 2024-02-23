@@ -4,7 +4,7 @@ import productList from '../mocks/products.api';
 let products = productList;
 
 const httpMock = {
-  get: async <T>(url: string, body?: any) => {
+  get: async <T>(body?: any) => {
     if (body) {
       const response = new Promise((resolve) =>
         setTimeout(
@@ -35,7 +35,7 @@ const httpMock = {
     );
     return (await response) as T;
   },
-  post: async <T>(url: string, body: any) => {
+  post: async <T>(body: any) => {
     products.push(body);
 
     const response = new Promise((resolve) =>
@@ -52,7 +52,7 @@ const httpMock = {
     );
     return (await response) as T;
   },
-  put: async <T>(url: string, body: any) => {
+  put: async <T>(body: any) => {
     products = [...products.filter(({ id }) => id !== body.id), body];
 
     const response = new Promise((resolve) =>
@@ -69,7 +69,7 @@ const httpMock = {
     );
     return (await response) as T;
   },
-  delete: async <T>(url: string, body: any) => {
+  delete: async <T>(body: any) => {
     products = products.filter(({ id }) => id !== body);
 
     const response = new Promise((resolve) =>
