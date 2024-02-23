@@ -6,7 +6,7 @@ interface ILoadingProps {
 }
 
 const Loading: FC<ILoadingProps> = ({ isLoading }) => {
-  if (!isLoading) {
+  if (isLoading) {
     return <></>;
   }
 

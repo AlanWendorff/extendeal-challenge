@@ -24,6 +24,8 @@ const Form: FC<IFormProps> = ({ product_id, name, thumbnail_url, price, stock, i
     <Grid sx={{ gap: 2, padding: 5 }} container direction='column'>
       <h3>ID: {product_id}</h3>
 
+      <img src={thumbnail_url} width={100} alt='thunbnail' />
+
       <TextField label='Nombre' variant='filled' required {...register('name')} defaultValue={name} />
 
       <TextField

@@ -11,7 +11,7 @@ interface ITableProps {
 const Table: FC<ITableProps> = ({ products, handleDeleteProduct }) => {
   const { data, COLUMNS } = useTable({ handleDeleteProduct });
 
-  return <DataGrid {...data} columns={COLUMNS} rows={products} slots={{ toolbar: GridToolbar }} />;
+  return <DataGrid {...data} columns={COLUMNS} rows={products} slots={{ toolbar: GridToolbar }} style={{ width: '100%' }} />;
 };
 
 export default Table;

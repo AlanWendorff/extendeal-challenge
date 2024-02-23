@@ -16,13 +16,13 @@ const Root: FC = () => {
       <Error error={error} />
 
       {products && (
-        <Grid container direction='row' width={'100%'} alignItems={'flex-start'} gap={3}>
-          <Table products={products.response.products} handleDeleteProduct={handleDeleteProduct} />
+        <Grid container direction='column' width='100%' alignItems='flex-end' gap={3}>
           <Link to={PRODUCT_CREATE} aria-label='crear producto'>
             <Button sx={{ marginTop: 3 }} variant='contained' color='success'>
               Crear producto
             </Button>
           </Link>
+          <Table products={products.response.products} handleDeleteProduct={handleDeleteProduct} />
         </Grid>
       )}
     </>

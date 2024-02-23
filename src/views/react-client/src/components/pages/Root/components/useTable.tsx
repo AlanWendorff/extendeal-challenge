@@ -31,7 +31,7 @@ const useTable = ({ handleDeleteProduct }: IUseTableProps): IUseTable => {
     {
       field: 'product_id',
       headerName: 'ID del producto',
-      width: 150
+      width: 100
     },
     {
       field: 'name',
@@ -43,9 +43,13 @@ const useTable = ({ handleDeleteProduct }: IUseTableProps): IUseTable => {
       headerName: 'Precio'
     },
     {
+      field: 'stock',
+      headerName: 'Stock'
+    },
+    {
       field: 'is_available',
       headerName: 'Disponibilidad',
-      width: 150,
+      width: 100,
       valueFormatter: (params: GridValueFormatterParams<boolean>) => PRODUCT_AVALABILITY_MAPPER[`${params.value}`]
     },
     {
