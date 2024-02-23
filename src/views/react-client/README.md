@@ -1,5 +1,23 @@
 # React + TypeScript + Vite
 
+This is a [Vite.ts](https://vitejs.dev) project bootstrapped with `yarn create vite`.
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+<hr>
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
